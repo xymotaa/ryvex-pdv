@@ -38,6 +38,14 @@
             </div>
         </nav>
     </header>
-    @RenderBody()
+    <div class = "d-flex">
+        <aside class = "sidebar">
+            <a><i class = "bi bi-box-seam"></i> Produtos</a>
+            <a><i class = "bi bi-cart"></i> Vendas</a>
+        </aside>
+        <main class = "flex-grow-1 main-content">
+            @RenderBody()
+        </main>
+    </div>
 </body>
 </html>
