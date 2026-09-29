@@ -1,6 +1,8 @@
 ﻿/* Navbar Custom */
 .navbar-custom {
-    background-color: #f9fafb; /* Cor de fundo personalizada */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  height: 60px;
+  align-items: center;
+  background-color: #f9fafb; /* Cor de fundo personalizada */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 

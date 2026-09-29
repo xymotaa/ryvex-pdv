@@ -8,14 +8,31 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ryvex-pdv.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://jsdelivr.net">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 </head>
 <body>
     <header>
         @* Menu navbar *@
-        <nav class = "navbar navbar-expand-lg navbar-custom">
-            <div class = "container-fluid ps-5">
-                <a class = "navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ryvex PDV</a>
+        @* container-fluid px-3 px-md-5: padding menor no celular (px-3) e maior em telas médias+ (px-md-5), em vez de um valor fixo que espreme o conteúdo em telas estreitas *@
+        <nav class = "navbar navbar-custom">
+            <div class = "container-fluid px-3 px-md-5 flex-nowrap">
+
+                @* text-truncate: se o nome do sistema não couber, corta com "..." em vez de quebrar linha ou empurrar o resto *@
+                @* Lado esquerdo: nome do sistema *@
+                <a class = "navbar-brand text-truncate" asp-area="" asp-controller="Home" asp-action="Index">Ryvex PDV</a>
+
+                @* flex-shrink-0: impede que o bloco de perfil seja espremido/quebrado quando o espaço diminui *@
+                @* Lado direito: perfil do usuário *@
+                <div class = "navbar-text d-flex align-items-center ms-auto flex-shrink-0">
+                    @* d-inline d-sm-none: três barrinhas (menu) aparecem só abaixo de 576px (mobile), somem a partir de sm *@
+                    <i class = "bi bi-list fs-2 text-dark d-inline d-sm-none"></i>
+
+                    @* d-none d-sm-inline: ícone de perfil escondido no mobile, aparece a partir de sm *@
+                    <i class = "bi bi-person-circle fs-4 me-2 text-dark d-none d-sm-inline"></i>
+
+                    @* d-none d-sm-inline: nome escondido em telas muito pequenas (menos de 576px), aparece a partir dali *@
+                    <span class = "fw-semibold text-dark d-none d-sm-inline">Ana Flávia</span>
+                </div>
             </div>
         </nav>
     </header>
